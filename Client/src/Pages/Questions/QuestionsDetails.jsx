@@ -4,7 +4,7 @@ import upVote from '../../assets/sort-up.svg'
 import downVote from '../../assets/sort-down.svg'
 import Avatar from '../../Components/Avatar/Avatar'
 import DisplayAnswer from './DisplayAnswer'
-import Question from './Questions'
+import './Questions.css'
 const QuestionsDetails = (question) => {
   const { id } = useParams()
 
@@ -15,7 +15,7 @@ const QuestionsDetails = (question) => {
     noOfAnswers: 2,
     questionTitle: "What is a function?",
     questionBody: "It meant to be",
-    questionTags: ["java", "node js", "react js", "mongo db", "express js"],
+    questionTags: ["java", "nodejs", "reactjs", "mongodb", "expressjs"],
     userPosted: "mino",
     userId: 1,
     askedOn: "jan 1",
@@ -96,7 +96,7 @@ const QuestionsDetails = (question) => {
                               <div>
                                 <p>asked{question.askedOn}</p>
                                 <Link to={`/Users/${question.userId}`} className='user-link' style={{ color: '#0086d8' }}>
-                                  <Avatar backgroundColor="orange" px='8px' py='5px' borderRadius="4px">{question.userPosted.charAt(0).toUpperCase()}</Avatar>
+                                  <Avatar backgroundColor="orange" px='8px' py='5px' borderRadius="4px" width="20px">{question.userPosted.charAt(0).toUpperCase()}</Avatar>
                                   <div>
                                     {question.userPosted}
                                   </div>
@@ -117,8 +117,8 @@ const QuestionsDetails = (question) => {
                     }
                     <section className='post-ans-container'>
                       <h3>Your Answer</h3>
-                      <form onSubmit={(e) => { handlePostAns(e, question.answer.length) }}>
-                        <textarea name="" id="" cols="30" rows="10" onChange={e => setAnswer(e.target.value)}></textarea><br />
+                      <form>
+                        <textarea name="" id="" cols="30" rows="10"></textarea><br />
                         <input type="Submit" className='post-ans-btn' value='Post Your Answer' />
                       </form>
                       <p>

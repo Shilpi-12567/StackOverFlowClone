@@ -1,8 +1,34 @@
 import React from 'react'
-
-const DisplayAnswer = () => {
+import moment from 'moment'
+import { Link } from 'react-router-dom'
+import QuestionsDetails from './QuestionsDetails'
+import Avatar from '../../Components/Avatar/Avatar'
+const DisplayAnswer = ({ question }) => {
   return (
-    <div>DisplayAnswer</div>
+    <div>
+      {
+        question.answer.map((ans) => (
+          <div className="display-ans" key={ans._id}>
+            <p>{ans.answerBody}</p>
+            <div className="question-actions-user">
+              <div>
+                <button type="button">Share</button>
+                <button type='button'>Delete</button>
+              </div>
+              <div>
+                <p>answered {moment(ans.answeredOn).fromNow()}</p>
+                <Link to={`/Users/${ans.userId}`} className='user-link' style={{ color: '#0086d8' }}>
+                  <Avatar backgroundColor="lightgreen" px='8px' py='5px' borderRadius='4px'>{ans.userAnswered.charAt(0).toUpperCase()}</Avatar>
+                  <div>
+                    {ans.userAnswered}
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
   )
 }
 
