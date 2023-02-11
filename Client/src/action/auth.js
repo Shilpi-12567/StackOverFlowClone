@@ -1,5 +1,5 @@
-import * as api from './api'
-// import { setCurrentUser } from '../currentUser'
+import * as api from '../api'
+ import { setCurrentUser } from '../action/currentUser'
 
 export const signup = (authData, navigate) => async (dispatch) => {
     try {
@@ -22,3 +22,4 @@ export const login = (authData, navigate) => async (dispatch) => {
         console.log(error)
     }
 }
+export default setCurrentUser

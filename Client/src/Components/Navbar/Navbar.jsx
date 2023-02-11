@@ -1,9 +1,9 @@
 import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png'
-import Search from '../assets/Search.svg';
-import Avatar from '../Components/Avatar/Avatar'
+import logo from '../../assets/logo.png'
+import Search from '../../assets/Search.svg';
+import Avatar from '../../Components/Avatar/Avatar'
 const Navbar=()=> {
   var User = null
   return (

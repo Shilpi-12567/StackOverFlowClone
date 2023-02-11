@@ -8,6 +8,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import Reducers from './reducers';
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = createStore( Reducers, compose(applyMiddleware(thunk)))
 root.render(
   <Provider store={store}>
@@ -16,6 +17,5 @@ root.render(
   </div>
   </Provider>
 );
-const root = ReactDOM.createRoot(document.getElementById('root'));
 
 reportWebVitals();
